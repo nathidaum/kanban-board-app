@@ -1,0 +1,87 @@
+/************************************************/
+
+#root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+#homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 60px; /* navbar height */
+  margin-left: 200px; /* equal to the sidebar width to avoid overlap */
+}
+
+#sidebar {
+  position: fixed; /* stick to the left */
+  top: 60px; /* below the navbar */
+  left: 0;
+  width: 200px;
+  padding-top: 30px;
+  height: calc(100vh - 60px); /* viewport minus the navbar height */
+  background-color: #1c1c1c;
+  z-index: 999; /* Just below the navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sidebar-section {
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  padding-top: 30px;
+}
+
+.sidebar-section ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-section li {
+  list-style-type: none;
+  font-size: 1.3rem;
+  line-height: 4rem;
+  text-align: right; /* Text aligned to the right */
+}
+
+#navbar {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0; /* fix at the top */
+  left: 0;
+  right: 0;
+  background-color: #1c1c1c;
+  z-index: 1000; /* keep in foreground */
+}
+
+#navbar-logo {
+  max-height: 40px;
+}
+
+#footer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0; /* fix at the bottom */
+  left: 0;
+  right: 0;
+  background-color: #1c1c1c;
+  color: grey;
+  z-index: 1000; /* keep in foreground */
+}
