@@ -1,21 +1,32 @@
+import {useState} from 'react';
+
 const Card = ({ ticket }) => {
     const formatDate = (dateString) => {
-      const date = new Date(dateString);
-      return date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-      });
+        const date = new Date(dateString);
+        const month = date.toLocaleString("en-US", { month: "short" });  // first three characters of the month
+        const day = date.getDate(); // day of the month
+        return `${month} ${day}`;
+    };
+
+    const [isDeleted, setisDeleted] = useState(false);
+    
+    if(isDeleted) {
+        return null
+    }; // don't show deleted tickets
+
+    const deleteTicket = () => {
+        setisDeleted(true);
     };
   
     return (
       <div className="card">
         <h3>{ticket.title}</h3>
-        <h4>{ticket.description}</h4>
-        <p>{ticket.assignee}</p>
-        <p>{ticket.priority}</p>
-        <p>✨ <strong>Created</strong> {formatDate(ticket.createdDate)}</p>
-        <p>🚨 <strong>Due</strong> {formatDate(ticket.dueDate)}</p>
+        <p>{ticket.description}</p>
+        <hr></hr>
+        <p className="assigned">{ticket.assignee}</p>
+        <p className={`label ${ticket.priority}`}>{ticket.priority}</p>
+        <p className="date">📅 Created {formatDate(ticket.createdDate)} - 🚨 Due {formatDate(ticket.dueDate)}</p>
+        <button onClick={() => {deleteTicket(ticket.id)}}>Delete</button>
       </div>
     );
   };

@@ -1,3 +1,5 @@
+/************************************************/
+/* Global Styles */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -36,6 +38,19 @@ h1 {
   line-height: 1.1;
 }
 
+h3 {
+  font-size: 1.4em;
+  line-height: 1.1;
+}
+
+hr {
+  border: none;
+  height: 2px;                
+  background-color: #46444478; 
+  margin: 20px 0;           
+  width: 100%;
+}
+
 button {
   border-radius: 10px;
   border: 1px solid transparent;
@@ -54,3 +69,162 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/************************************************/
+/* Component/Page-Specific Styles */
+
+#root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+#homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 80px 0px 40px 200px;
+  height: calc(100vh - 60px);
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #191919;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sidebar-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#sidebar-logo {
+  height: 30px;
+  padding: 20px;
+}
+
+.sidebar-section ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-section li {
+  list-style-type: none;
+  font-size: 1.2rem;
+  line-height: 4rem;
+  text-align: right;
+  width: 100%;
+}
+
+#navbar {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 30px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 200px;
+  right: 0;
+  background-color: #131313;
+  z-index: 999;
+}
+
+#footer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #131313;
+  z-index: 999;
+}
+
+#footer a {
+  color: grey;
+}
+
+/**********  CARDS  ********/
+.card {
+  margin: 20px;
+  padding: 20px;
+  background-color: #131313;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid grey;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+}
+
+.kanban-column {
+  flex: 1; /*can grow and take up any available space*/
+  margin: 0 10px;
+}
+
+.kanban-column h2 {
+  text-align: center;
+}
+
+.label.High {
+  background-color: rgb(218, 151, 151);
+  color: rgb(78, 17, 17);
+  font-weight: 500;
+  padding: 2px 20px;
+  margin: 2px 0px;
+  width: fit-content;
+  border-radius: 20px;
+}
+.label.Medium {
+  background-color: rgb(228, 163, 113);
+  color: rgb(55, 28, 19);
+  font-weight: 500;
+  padding: 2px 20px;
+  margin: 2px 0px;
+  width: fit-content;
+  border-radius: 20px;
+}
+.label.Low {
+  background-color: rgb(94, 160, 193);
+  color: rgb(20, 32, 49);
+  font-weight: 500;
+  padding: 2px 20px;
+  margin: 2px 0px;
+  width: fit-content;
+  border-radius: 20px;
+}
+
+.date {
+  color: grey;
+  font-weight: 400;
+}
+
+.assigned {
+  color: grey;
+  font-weight: 400;
+}
