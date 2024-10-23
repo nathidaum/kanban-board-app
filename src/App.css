@@ -10,20 +10,18 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 60px; /* navbar height */
-  margin-left: 200px; /* equal to the sidebar width to avoid overlap */
+  margin: 80px 0px 40px 200px; /* navbar footer sidebar */
   height: calc(100vh - 60px);
 }
 
 #sidebar {
   position: fixed; /* stick to the left */
-  top: 60px; /* below the navbar */
+  top: 0;
   left: 0;
   width: 200px;
-  padding-top: 30px;
-  height: calc(100vh - 60px); /* viewport minus the navbar height */
-  background-color: #1c1c1c;
-  z-index: 999; /* Just below the navbar */
+  height: 100vh; /* viewport minus the navbar height */
+  background-color: #191919;
+  z-index: 1000; /* foreground */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -34,6 +32,11 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+#sidebar-logo {
+  height: 30px;
+  padding: 20px;
 }
 
 .sidebar-section ul {
@@ -53,29 +56,24 @@
   box-sizing: border-box;
   margin: 0;
   padding: 10px 30px;
-  width: 100%;
-  height: 60px;
+  height: 70px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   position: fixed;
   top: 0; /* fix at the top */
-  left: 0;
+  left: 200px;
   right: 0;
   background-color: #131313;
-  z-index: 1000; /* keep in foreground */
-}
-
-#navbar-logo {
-  max-height: 30px;
+  z-index: 999; /* just below sidebar */
 }
 
 #footer {
   box-sizing: border-box;
   margin: 0;
-  padding: 10px 30px;
-  width: 100%;
+  padding: 10px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -84,6 +82,10 @@
   bottom: 0; /* fix at the bottom */
   left: 0;
   right: 0;
-  background-color: #1c1c1c;
-  z-index: 1000; /* keep in foreground */
+  background-color: #131313;
+  z-index: 999; /* just below sidebar */
+}
+
+#footer a {
+  color: grey;
 }
