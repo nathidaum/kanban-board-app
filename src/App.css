@@ -12,6 +12,7 @@
   justify-content: flex-start;
   padding-top: 60px; /* navbar height */
   margin-left: 200px; /* equal to the sidebar width to avoid overlap */
+  height: calc(100vh - 60px);
 }
 
 #sidebar {
@@ -31,8 +32,8 @@
 
 .sidebar-section {
   display: flex;
-  justify-content: flex-end; /* Aligns items to the right */
-  padding-top: 30px;
+  justify-content: center;
+  width: 100%;
 }
 
 .sidebar-section ul {
@@ -42,9 +43,10 @@
 
 .sidebar-section li {
   list-style-type: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 4rem;
   text-align: right; /* Text aligned to the right */
+  width: 100%;
 }
 
 #navbar {
@@ -52,6 +54,7 @@
   margin: 0;
   padding: 10px 30px;
   width: 100%;
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -60,12 +63,12 @@
   top: 0; /* fix at the top */
   left: 0;
   right: 0;
-  background-color: #1c1c1c;
+  background-color: #131313;
   z-index: 1000; /* keep in foreground */
 }
 
 #navbar-logo {
-  max-height: 40px;
+  max-height: 30px;
 }
 
 #footer {
@@ -82,6 +85,5 @@
   left: 0;
   right: 0;
   background-color: #1c1c1c;
-  color: grey;
   z-index: 1000; /* keep in foreground */
 }
