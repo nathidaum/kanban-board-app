@@ -6,9 +6,9 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import NotFound from "./pages/NotFoundPage";
 import Dashboard from "./pages/Dashboard";
+import TicketDetails from "./pages/TicketDetails";
 
 function App() {
-
   return (
     <div id="homepage">
       <Navbar />
@@ -17,9 +17,10 @@ function App() {
       <Footer />
 
       <Routes>
-        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/ticket/:ticketId" element={<TicketDetails />} />
       </Routes>
     </div>
   );

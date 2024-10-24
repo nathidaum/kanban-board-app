@@ -2,19 +2,22 @@ import { useState } from "react";
 import Card from "./Card";
 
 const Column = ({ title, tickets }) => {
-  
-  const [ticketList, setTicketList] = useState(tickets)
+  const [ticketList, setTicketList] = useState(tickets);
 
   const deleteTicket = (id) => {
-    const updatedTicketList = ticketList.filter((ticketObj) => ticketObj.id !== id)
-    setTicketList(updatedTicketList)
-  }
-  
+    const updatedTicketList = ticketList.filter(
+      (ticketObj) => ticketObj.id !== id
+    );
+    setTicketList(updatedTicketList);
+  };
+
   return (
     <div className="kanban-column">
-      <h2>{title}</h2>
+      <h2>
+        {title} ({ticketList.length})
+      </h2>
       {ticketList.map((ticket) => (
-        <Card key={ticket.id} ticket={ticket} deleteTicket={deleteTicket}/>
+        <Card key={ticket.id} ticket={ticket} deleteTicket={deleteTicket} />
       ))}
     </div>
   );
