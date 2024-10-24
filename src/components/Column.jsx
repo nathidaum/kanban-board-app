@@ -13,9 +13,8 @@ const Column = ({ title, tickets }) => {
 
   return (
     <div className="kanban-column">
-      <h2>
-        {title} ({ticketList.length})
-      </h2>
+      <h2>{title}</h2>
+      {/* <hr></hr> */}
       {ticketList.map((ticket) => (
         <Card key={ticket.id} ticket={ticket} deleteTicket={deleteTicket} />
       ))}

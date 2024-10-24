@@ -26,18 +26,19 @@ function TicketDetails() {
       <Navbar />
       <Sidebar />
 
-      <div className="card">
-        <NavLink to="/">
-          <button>Back</button>
-        </NavLink>
-        <h3>{ticket.title}</h3>
-        <p>{ticket.description}</p>
-        <hr></hr>
-        <p className="assigned">{ticket.assignee}</p>
-        <p className={`label ${ticket.priority}`}>{ticket.priority}</p>
-        <p className="date">📅 Created {formatDate(ticket.createdDate)}</p>
-        <p className="date">🚨 Due {formatDate(ticket.dueDate)}</p>
+      <div className="detailed-card">
+      <p className="date">Created {formatDate(ticket.createdDate)} - Due {formatDate(ticket.dueDate)}</p>
+      <div className="card-top">
+      <h3>{ticket.title}</h3>
+      <p className={`label ${ticket.priority}`}>{ticket.priority}</p>
       </div>
+        <p>{ticket.description}</p>
+        <p className="assigned">{ticket.assignee}</p>
+      </div>
+
+      <NavLink to="/" className="back-button">
+          <button>Back</button>
+          </NavLink>
 
       <Footer />
     </div>

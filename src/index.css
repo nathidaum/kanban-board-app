@@ -47,8 +47,7 @@ hr {
   border: none;
   height: 2px;                
   background-color: #46444478; 
-  margin: 20px 0;           
-  width: 100%;
+  margin: 20px;           
 }
 
 button {
@@ -87,7 +86,6 @@ button:focus-visible {
 
 .secondary-button:hover {
   background-color: #9b9ff3;
-
 }
 
 .secondary-button:focus,
@@ -227,14 +225,77 @@ button:focus-visible {
   color: grey;
 }
 
+/**********  COLUMNS  ********/
+
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 100px;;
+}
+
+.kanban-column {
+  flex: 1; /*can grow and take up any available space*/
+  margin: 50px 5px;
+}
+
+.kanban-column h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 1.8rem;
+}
+
 /**********  CARDS  ********/
 .card {
   margin: 20px;
-  padding: 20px;
+  padding: 30px;
   background-color: #131313;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-left: 8px solid grey;
+  /* border-left: 8px solid rgb(80, 80, 80); */
+}
+
+.card h3 {
+  font-weight: 400;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailed-card {
+  margin: 100px 200px 30px;
+  padding: 30px 50px;
+  background-color: #131313;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detailed-card h3 {
+  font-size: 2rem;
+}
+
+.detailed-card p {
+  font-size: 1.4rem;
+}
+
+.detailed-card .date {
+  color: grey;
+  font-weight: 400;
+  font-size: 1.1rem;
+  background-color: #191919;
+  width: fit-content;
+  padding: 2px 20px; 
+  border-radius: 40px;
+}
+
+.back-button {
+  margin: 0px 200px;
+}
+
+.description {
+  color: grey;
 }
 
 .title {
@@ -242,23 +303,9 @@ button:focus-visible {
   font-weight: 800;
 }
 
-.kanban-board {
-  display: flex;
-  justify-content: space-between;
-}
-
-.kanban-column {
-  flex: 1; /*can grow and take up any available space*/
-  margin: 0 10px;
-}
-
-.kanban-column h2 {
-  text-align: center;
-}
-
 .label.High {
-  background-color: rgb(218, 151, 151);
-  color: rgb(78, 17, 17);
+  background-color: #575b99;
+  color: #1c1e4a;
   font-weight: 500;
   padding: 2px 20px;
   margin: 2px 0px;
@@ -266,7 +313,7 @@ button:focus-visible {
   border-radius: 20px;
 }
 .label.Medium {
-  background-color: rgb(228, 163, 113);
+  background-color: rgb(98, 68, 128);
   color: rgb(55, 28, 19);
   font-weight: 500;
   padding: 2px 20px;
@@ -275,8 +322,8 @@ button:focus-visible {
   border-radius: 20px;
 }
 .label.Low {
-  background-color: rgb(94, 160, 193);
-  color: rgb(20, 32, 49);
+  background-color: rgba(15, 53, 106, 0.823);
+  color: black;
   font-weight: 500;
   padding: 2px 20px;
   margin: 2px 0px;
@@ -284,12 +331,42 @@ button:focus-visible {
   border-radius: 20px;
 }
 
-.date {
+.assigned {
   color: grey;
   font-weight: 400;
 }
 
-.assigned {
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0px 0px;
+}
+
+.card-buttons button {
+  margin: 10px 2px;
+}
+
+.delete-button {
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding: 0.8em 1.5em;
+  background-color: transparent;
+  cursor: pointer;
   color: grey;
-  font-weight: 400;
+  font-size: 1em;
+}
+.delete-button a {
+  color: black;
+  font-size: 1em;
+}
+
+.delete-button:hover {
+  background-color: #191919;
+  color: white;
+  border: 1px solid white;
+}
+
+.delete-button:focus,
+.delete-button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
