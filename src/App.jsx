@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Column from "./components/Column";
 import ticketData from "./assets/kanban.json";
 import About from "./pages/About";
+import NotFound from "./pages/NotFoundPage";
 
 function App() {
   // Filter tickets by status to pass them as props
@@ -34,6 +35,7 @@ function App() {
           }
         />
         <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

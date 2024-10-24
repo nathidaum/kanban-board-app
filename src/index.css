@@ -75,6 +75,9 @@ button:focus-visible {
   padding: 0.8em 1.5em;
   background-color: #f0db4e;
   cursor: pointer;
+  color: black;
+  font-size: 1em;
+  font-weight: 800;
 }
 .secondary-button a {
   color: black;
@@ -128,6 +131,24 @@ button:focus-visible {
   font-size: 1.4rem;
   color: grey;
   padding: 20px 0px;
+}
+
+#not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 80px 0px 40px 200px;
+  height: calc(100vh - 60px);
+}
+
+.error {
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  padding: 20px 500px 20px 0px;
+}
+
+.grey {
+  color: grey;
 }
 
 #sidebar {
