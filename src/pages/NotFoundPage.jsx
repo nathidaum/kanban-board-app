@@ -16,9 +16,9 @@ function NotFound() {
           <button className="secondary-button">Go to homepage</button>
         </Link>
       </div>
-
       <Footer />
     </div>
   );
+}
 
 export default NotFound;
