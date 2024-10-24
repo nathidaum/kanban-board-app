@@ -1,21 +1,11 @@
 import {useState} from 'react';
 
-const Card = ({ ticket }) => {
+const Card = ({ ticket, deleteTicket }) => {
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         const month = date.toLocaleString("en-US", { month: "short" });  // first three characters of the month
         const day = date.getDate(); // day of the month
         return `${month} ${day}`;
-    };
-
-    const [isDeleted, setisDeleted] = useState(false);
-    
-    if(isDeleted) {
-        return null
-    }; // don't show deleted tickets
-
-    const deleteTicket = () => {
-        setisDeleted(true);
     };
   
     return (

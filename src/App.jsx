@@ -5,7 +5,7 @@ import Column from "./components/Column";
 import ticketData from "./assets/kanban.json";
 
 function App() {
-  // Filter tickets by status
+  // Filter tickets by status to pass them as props
   const todoTickets = ticketData.filter(ticket => ticket.status === "To Do");
   const inProgressTickets = ticketData.filter(ticket => ticket.status === "In Progress");
   const doneTickets = ticketData.filter(ticket => ticket.status === "Done");
