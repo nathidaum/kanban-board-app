@@ -1,4 +1,5 @@
 import logo from "../assets/logo.png";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -9,10 +10,10 @@ const Sidebar = () => {
       <div className="sidebar-section">
         <ul>
           <li>
-            <a href="/">Home</a>
+          <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="/">About</a>
+          <NavLink to="/about">About</NavLink>
           </li>
         </ul>
       </div>

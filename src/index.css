@@ -69,6 +69,29 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.secondary-button {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  background-color: #f0db4e;
+  cursor: pointer;
+}
+.secondary-button a {
+  color: black;
+  font-size: 1em;
+  font-weight: 800;
+}
+
+.secondary-button:hover {
+  background-color: #9b9ff3;
+
+}
+
+.secondary-button:focus,
+.secondary-button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 /************************************************/
 /* Component/Page-Specific Styles */
 
@@ -84,6 +107,27 @@ button:focus-visible {
   justify-content: flex-start;
   margin: 80px 0px 40px 200px;
   height: calc(100vh - 60px);
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 80px 0px 40px 200px;
+  height: calc(100vh - 60px);
+}
+
+.intro {
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  padding: 20px 500px 20px 0px;
+}
+
+.intro p {
+  font-family: sans-serif;
+  font-size: 1.4rem;
+  color: grey;
+  padding: 20px 0px;
 }
 
 #sidebar {
