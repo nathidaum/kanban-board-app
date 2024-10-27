@@ -1,7 +1,4 @@
 import { useParams, NavLink } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
 
 function TicketDetails({ tickets }) {
   const { ticketId } = useParams(); // Get ticketId from the URL
@@ -22,9 +19,6 @@ function TicketDetails({ tickets }) {
 
   return (
     <div>
-      <Navbar />
-      <Sidebar />
-
       <div className="detailed-card">
         <p className="date">
           Created {formatDate(ticket.createdDate)} - Due {formatDate(ticket.dueDate)}
@@ -36,12 +30,10 @@ function TicketDetails({ tickets }) {
         <p>{ticket.description}</p>
         <p className="assigned">{ticket.assignee}</p>
       </div>
-
       <NavLink to="/" className="back-button">
         <button>Back</button>
       </NavLink>
 
-      <Footer />
     </div>
   );
 }
