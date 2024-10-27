@@ -423,3 +423,41 @@ input:focus, select:focus {
   border-color: #9b9ff3; /* Set your preferred color */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: subtle shadow */
 }
+
+
+/**************** FORM ****************************/
+
+/* Form overlay to darken the background */
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(75, 75, 75, 0.8); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Form content styling */
+.form-content {
+  padding: 20px;
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 90%;
+  position: relative;
+  z-index: 1001; /* foreground */
+}
+
+/* Close button styling */
+.close-button {
+  position: absolute;
+  top: 41px;
+  right: 120px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
