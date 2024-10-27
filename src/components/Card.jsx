@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const Card = ({ ticket, deleteTicket }) => {
+
   return (
     <div className="card">
       <div className="card-top">
