@@ -31,7 +31,7 @@ function App() {
   const closeForm = () => setIsFormOpen(false);
 
   return (
-    <div id="homepage">
+    <div id="app">
 
       <Routes>
         <Route path="/" element={<Dashboard tickets={tickets} createTicket={createTicket} deleteTicket={deleteTicket}/>} />
@@ -48,7 +48,7 @@ function App() {
       {/* Conditionally render the CreateTicketForm if isFormOpen is true */}
       {isFormOpen && (
         <div className="form-overlay" onClick={closeForm}> {/* clicking outside the form content should also close the form */}
-          <div className="form-content" onClick={(e) => e.stopPropagation()}> {/* prevents accidental closure of the form if user clicks inside the modal */}
+          <div className="form-box" onClick={(e) => e.stopPropagation()}> {/* prevents accidental closure of the form if user clicks inside the modal */}
             <button onClick={closeForm} className="close-button">X</button>
             <CreateTicketForm callBacktoCreateTicket={createTicket} />
           </div>

@@ -1,28 +1,23 @@
 /************************************************/
 /* Global Styles */
+
+/* Base theme variables */
 :root {
+  --primary-color: #9b9ff3;
+  --secondary-color: #46444478;
+  --accent-color: #f0db4e;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --bg-color: #242424;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  box-sizing: border-box;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: white;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #c1c3eb;
 }
 
 body {
@@ -31,6 +26,26 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Text styles */
+a {
+  font-weight: 500;
+  color: white;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--primary-color);
 }
 
 h1 {
@@ -46,108 +61,66 @@ h3 {
 hr {
   border: none;
   height: 2px;                
-  background-color: #46444478; 
-  margin: 20px;           
+  background-color: var(--secondary-color); 
+  margin: 20px;
+}
+
+/* Button styles */
+button, .secondary-button {
+  border-radius: 10px;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 500;
+  outline: none;
+  border: 1px solid transparent;
 }
 
 button {
-  border-radius: 10px;
-  border: 1px solid transparent;
-  padding: 0.8em 1.5em;
-  font-size: 1em;
-  font-weight: 500;
-  background-color: #46444478;
-  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
+
 button:hover {
-  background-color: #9b9ff3;
+  background-color: var(--primary-color);
   color: #1c1c1c;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 .secondary-button {
-  border-radius: 10px;
-  border: 1px solid transparent;
-  padding: 0.8em 1.5em;
-  background-color: #f0db4e;
-  cursor: pointer;
+  background-color: var(--accent-color);
   color: black;
-  font-size: 1em;
   font-weight: 800;
 }
+
 .secondary-button a {
   color: black;
-  font-size: 1em;
-  font-weight: 800;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .secondary-button:hover {
-  background-color: #9b9ff3;
-}
-
-.secondary-button:focus,
-.secondary-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background-color: var(--primary-color);
 }
 
 /************************************************/
 /* Component/Page-Specific Styles */
 
-#root {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-}
-
-#homepage {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+#app, #about, #not-found {
   margin: 80px 0px 40px 200px;
   height: calc(100vh - 60px);
 }
 
-#about {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 80px 0px 40px 200px;
-  height: calc(100vh - 60px);
-}
-
-.intro {
-  font-family: sans-serif;
+.intro, .error {
   font-size: 1.4rem;
   padding: 20px 500px 20px 0px;
 }
 
-.intro p {
-  font-family: sans-serif;
-  font-size: 1.4rem;
-  color: grey;
-  padding: 20px 0px;
-}
-
-#not-found {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 80px 0px 40px 200px;
-  height: calc(100vh - 60px);
-}
-
-.error {
-  font-family: sans-serif;
-  font-size: 1.4rem;
-  padding: 20px 500px 20px 0px;
-}
-
-.grey {
+.intro p, .grey {
+  font-size: 1.3rem;
   color: grey;
 }
+
+/****************** SIDE BAR ******************/
 
 #sidebar {
   position: fixed;
@@ -155,23 +128,22 @@ button:focus-visible {
   left: 0;
   width: 200px;
   height: 100vh;
-  background-color: #191919;
-  z-index: 1000;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
+  background-color: #191919;
+  z-index: 1000;
+}
+
+#sidebar-logo {
+  height: 30px;
+  padding: 20px;
 }
 
 .sidebar-section {
   display: flex;
   justify-content: center;
   width: 100%;
-}
-
-#sidebar-logo {
-  height: 30px;
-  padding: 20px;
 }
 
 .sidebar-section ul {
@@ -184,26 +156,26 @@ button:focus-visible {
   font-size: 1.2rem;
   line-height: 4rem;
   text-align: right;
-  width: 100%;
 }
 
+/****************** NAV BAR ******************/
+
 #navbar {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 10px 30px;
-  height: 70px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
   position: fixed;
   top: 0;
-  left: 200px;
   right: 0;
+  left: 200px;
+  margin: 0;
+  padding: 5px 30px;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background-color: #131313;
   z-index: 999;
 }
 
+/****************** FOOTER ******************/
 #footer {
   box-sizing: border-box;
   margin: 0;
@@ -225,37 +197,39 @@ button:focus-visible {
   color: grey;
 }
 
-/**********  COLUMNS  ********/
-
-.kanban-board {
+/**************** COLUMNS *****************/
+ 
+/* Dashboard page */
+.kanban-board { 
   display: flex;
   justify-content: space-between;
-  margin: 20px 100px;;
+  margin: 20px 100px;
 }
 
+/* Column component */
 .kanban-column {
-  flex: 1; /*can grow and take up any available space*/
-  margin: 50px 5px;
+  flex: 1;
+  margin: 5px;
 }
 
 .kanban-column h2 {
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px;
   font-size: 1.8rem;
 }
 
-/**********  CARDS  ********/
+/****************** CARDS *****************/
 .card {
   margin: 20px;
   padding: 20px;
   background-color: #131313;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* border-left: 8px solid rgb(80, 80, 80); */
 }
 
 .card h3 {
   font-weight: 400;
+  padding-right: 15px;
 }
 
 .card-top {
@@ -264,8 +238,61 @@ button:focus-visible {
   align-items: center;
 }
 
+.label.High, .label.Medium, .label.Low {
+  padding: 1px 15px;
+  width: fit-content;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.label.High {
+  background-color: #575b99;
+  color: #1c1e4a;
+}
+
+.label.Medium {
+  background-color: rgb(98, 68, 128);
+  color: rgb(55, 28, 19);
+}
+
+.label.Low {
+  background-color: rgba(43, 103, 188, 0.823);
+  color: black;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.card-buttons button {
+  margin: 10px 2px;
+}
+
+.card .delete-button {
+  border-radius: 10px;
+  padding: 0.8em 1.5em;
+  background-color: transparent;
+  cursor: pointer;
+  color: grey;
+  font-size: 1em;
+}
+
+.card .delete-button:hover {
+  background-color: #191919;
+  color: white;
+  border: 1px solid white;
+}
+
+/****************** TICKET DETAILS ******************/
+
+.ticket-details {
+  margin: 100px 200px;
+}
+
 .detailed-card {
-  margin: 100px 200px 30px;
+  margin-bottom: 30px;
   padding: 30px 50px;
   background-color: #131313;
   border-radius: 10px;
@@ -290,84 +317,13 @@ button:focus-visible {
   border-radius: 40px;
 }
 
-.back-button {
-  margin: 0px 200px;
-}
-
-.description {
+.detailed-card .description {
   color: grey;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.label.High {
-  background-color: #575b99;
-  color: #1c1e4a;
-  font-weight: 500;
-  padding: 2px 20px;
-  margin: 2px 0px;
-  width: fit-content;
-  border-radius: 20px;
-}
-.label.Medium {
-  background-color: rgb(98, 68, 128);
-  color: rgb(55, 28, 19);
-  font-weight: 500;
-  padding: 2px 20px;
-  margin: 2px 0px;
-  width: fit-content;
-  border-radius: 20px;
-}
-.label.Low {
-  background-color: rgba(15, 53, 106, 0.823);
-  color: black;
-  font-weight: 500;
-  padding: 2px 20px;
-  margin: 2px 0px;
-  width: fit-content;
-  border-radius: 20px;
 }
 
 .assigned {
   color: grey;
   font-weight: 400;
-}
-
-.card-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin: 30px 0px 0px;
-}
-
-.card-buttons button {
-  margin: 10px 2px;
-}
-
-.delete-button {
-  border-radius: 10px;
-  padding: 0.8em 1.5em;
-  background-color: transparent;
-  cursor: pointer;
-  color: grey;
-  font-size: 1em;
-}
-.delete-button a {
-  color: black;
-  font-size: 1em;
-}
-
-.delete-button:hover {
-  background-color: #191919;
-  color: white;
-  border: 1px solid white;
-}
-
-.delete-button:focus,
-.delete-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 /******** CREATE TICKET FORM **********/
@@ -384,49 +340,6 @@ button:focus-visible {
   align-items: center;
 }
 
-.form h2 {
-  text-align: center; 
-}
-
-.inputs {
-  display: flex; 
-  flex-direction: column; 
-  flex-wrap: wrap;
-  margin: 0 20px;
-}
-
-.inputs label {
-  margin: 10px; 
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-input, select {
-  font-size: 1.2rem;
-  border-radius: 2rem;
-  margin: 0.5rem; 
-  padding: 0.5rem 2rem;
-  flex-grow: 1;
-  border: 1px solid grey;
-}
-
-.option {
-  color: grey;
-}
-
-.form button {
-  margin: 30px 0px;
-}
-
-input:focus, select:focus {
-  outline: none; /* Remove the default focus outline */
-  border-color: #9b9ff3; /* Set your preferred color */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: subtle shadow */
-}
-
-
-/**************** FORM ****************************/
-
 /* Form overlay to darken the background */
 .form-overlay {
   position: fixed;
@@ -441,23 +354,38 @@ input:focus, select:focus {
   z-index: 1000;
 }
 
-/* Form content styling */
-.form-content {
-  padding: 20px;
-  border-radius: 8px;
-  width: fit-content;
-  max-width: 90%;
-  position: relative;
-  z-index: 1001; /* foreground */
-}
-
 /* Close button styling */
 .close-button {
   position: absolute;
-  top: 41px;
-  right: 120px;
+  top: 110px;
+  right: 500px;
   background: transparent;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.form h2 {
+  text-align: center; 
+}
+
+.form .inputs {
+  display: flex; 
+  flex-direction: column; 
+  flex-wrap: wrap;
+  margin: 0 20px;
+}
+
+.form .inputs label {
+  margin: 10px; 
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.form input, .form select {
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  margin: 0.5rem; 
+  padding: 0.5rem 2rem;
+  border: 1px solid #ffffff;
 }

@@ -18,7 +18,7 @@ function TicketDetails({ tickets }) {
   };
 
   return (
-    <div>
+    <div className="ticket-details">
       <div className="detailed-card">
         <p className="date">
           Created {formatDate(ticket.createdDate)} - Due {formatDate(ticket.dueDate)}
@@ -33,7 +33,6 @@ function TicketDetails({ tickets }) {
       <NavLink to="/" className="back-button">
         <button>Back</button>
       </NavLink>
-
     </div>
   );
 }
