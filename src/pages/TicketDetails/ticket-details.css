@@ -39,4 +39,20 @@
     color: grey;
     font-weight: 400;
   }
+
+  .ticket-details .buttons {
+    display: flex; 
+    justify-content: space-between;
+  }
   
+  .dropdown {
+    padding: 10px 20px;
+    width: fit-content;
+    border-radius: 50px;
+    border: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: var(--tertiary-color);
+  }
+

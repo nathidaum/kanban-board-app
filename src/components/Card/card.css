@@ -16,7 +16,7 @@
 .card-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .label.High,
@@ -31,7 +31,7 @@
 }
 
 .label.High {
-  background-color: rgb(250, 233, 242);
+  background-color: var(--tertiary-color);
 }
 
 .label.Medium {

@@ -4,6 +4,7 @@
 :root {
   --primary-color: #9b9ff3;
   --secondary-color: #1f2269;
+  --tertiary-color: rgb(255, 215, 198);
   --accent-color: #c4d3f3;
   --text-color: #0f1033;
   --bg-color: linear-gradient(135deg, #c4d3f3, #e2e8f7); /* Direct gradient application */;
@@ -67,29 +68,33 @@ button, .secondary-button, .outline-button {
   padding: 0.8em 1.5em;
   font-size: 1em;
   cursor: pointer;
-  font-weight: 500;
   outline: none;
   border: 1px solid transparent;
 }
 
 button {
-  background-color: var(--secondary-color);
-  color: var(--bar-color);
-  font-weight: 600;
+  background-color: var(--text-color);
+  font-weight: 400;
 }
 
 button:hover {
-  background-color: var(--accent-color);
+  background-color: var(--tertiary-color);
+  border: 1px solid var(--text-color);
   color: var(--text-color);
 }
 
 .secondary-button {
-  background-color: var(--accent-color);
-  color: var(--text-color);
+  background-color: var(--text-color);
+  color: var(--accent-color);
 }
 
 .secondary-button a {
-  color: var(--text-color);
+  color: var(--accent-color);
+  border: 1px solid var(--text-color); 
+}
+
+.secondary-button a:hover {
+  color: var(--accent-color);
   font-size: inherit;
   font-weight: inherit;
 }
@@ -98,12 +103,11 @@ button:hover {
   background-color: var(--text-color);
 }
 
-
 .outline-button {
   border: 1px solid var(--accent-color);
   color: var(--text-color);
   background-color: transparent;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .outline-button a {

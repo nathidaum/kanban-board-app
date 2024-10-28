@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { useParams, NavLink } from "react-router-dom";
-import "../TicketDetails/ticket-details.css"
+import "../TicketDetails/ticket-details.css";
 
-function TicketDetails({ tickets }) {
+function TicketDetails({ tickets, callbackToUpdateStatus }) {
   const { ticketId } = useParams(); // Get ticketId from the URL
 
   // Find the ticket in the array based on the ticketId
@@ -18,11 +19,21 @@ function TicketDetails({ tickets }) {
     return `${month} ${day}`;
   };
 
+  // available statuses
+  const statuses = ["To Do", "In Progress", "Done"];
+  const [selectedStatus, setSelectedStatus] = useState(ticket.status);
+  const handleStatusChange = (event) => {
+    const newStatus = event.target.value;
+    setSelectedStatus(newStatus);
+    callbackToUpdateStatus(ticket.id, newStatus); // Update status in app
+  };
+
   return (
     <div className="ticket-details">
       <div className="detailed-card">
         <p className="date">
-          Created {formatDate(ticket.createdDate)} - Due {formatDate(ticket.dueDate)}
+          Created {formatDate(ticket.createdDate)} - Due{" "}
+          {formatDate(ticket.dueDate)}
         </p>
         <div className="card-top">
           <h3>{ticket.title}</h3>
@@ -30,10 +41,22 @@ function TicketDetails({ tickets }) {
         </div>
         <p>{ticket.description}</p>
         <p className="assigned">{ticket.assignee}</p>
+
+        {/* dropdown menu to change state */}
+        <select className="dropdown" id="status" value={selectedStatus} onChange={handleStatusChange}>
+          <option value="To Do">To Do</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
+
       </div>
-      <NavLink to="/" className="back-button">
-        <button>Back</button>
-      </NavLink>
+
+      <div className="buttons">
+        <NavLink to="/" className="back-button">
+          <button>Back</button>
+        </NavLink>
+
+      </div>
     </div>
   );
 }

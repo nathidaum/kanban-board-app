@@ -23,7 +23,18 @@ function App() {
 
   // Function to delete a ticket
   const deleteTicket = (id) => {
-    setTickets((prevTickets) => prevTickets.filter((ticket) => ticket.id !== id));
+    setTickets((prevTickets) =>
+      prevTickets.filter((ticket) => ticket.id !== id)
+    );
+  }
+
+  // Function to update ticket status
+  const updateStatus = (ticketId, newStatus) => {
+    setTickets((prevTickets) =>
+      prevTickets.map((ticket) =>
+        ticket.id === ticketId ? { ...ticket, status: newStatus } : ticket
+      )
+    );
   };
 
   // Form control functions
@@ -32,24 +43,39 @@ function App() {
 
   return (
     <div id="app">
-
       <Routes>
-        <Route path="/" element={<Dashboard tickets={tickets} createTicket={createTicket} deleteTicket={deleteTicket}/>} />
+        <Route
+          path="/"
+          element={
+            <Dashboard
+              tickets={tickets}
+              createTicket={createTicket}
+              deleteTicket={deleteTicket}
+            />
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/ticket/:ticketId" element={<TicketDetails tickets={tickets} />} />
+        <Route
+          path="/ticket/:ticketId"
+          element={<TicketDetails tickets={tickets} callbackToUpdateStatus={updateStatus}/>}
+        />
       </Routes>
-
-
-      <Navbar openForm={openForm} /> {/* Pass the openForm function to Navbar */}
+      <Navbar openForm={openForm} />{" "}
+      {/* Pass the openForm function to Navbar */}
       <Sidebar />
       <Footer />
-
       {/* Conditionally render the CreateTicketForm if isFormOpen is true */}
       {isFormOpen && (
-        <div className="form-overlay" onClick={closeForm}> {/* clicking outside the form content should also close the form */}
-          <div className="form-box" onClick={(e) => e.stopPropagation()}> {/* prevents accidental closure of the form if user clicks inside the modal */}
-            <button onClick={closeForm} className="close-button">X</button>
+        <div className="form-overlay" onClick={closeForm}>
+          {" "}
+          {/* clicking outside the form content should also close the form */}
+          <div className="form-box" onClick={(e) => e.stopPropagation()}>
+            {" "}
+            {/* prevents accidental closure of the form if user clicks inside the modal */}
+            <button onClick={closeForm} className="close-button">
+              X
+            </button>
             <CreateTicketForm callBacktoCreateTicket={createTicket} />
           </div>
         </div>

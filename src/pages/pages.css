@@ -4,7 +4,7 @@
 #app,
 #about,
 #not-found {
-  margin: 40px 0px 40px 200px;
+  margin: 30px 0px 40px 200px;
 }
 
 .intro,
@@ -16,5 +16,5 @@
 .intro p,
 .grey {
   font-size: 1.3rem;
-  color: grey;
+  color: var(--text-color);
 }
