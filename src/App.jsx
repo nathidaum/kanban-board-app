@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Footer from "./components/Footer/Footer";
 import About from "./pages/About";
 import NotFound from "./pages/NotFoundPage";
 import Dashboard from "./pages/Dashboard";
-import TicketDetails from "./pages/TicketDetails";
-import CreateTicketForm from "./components/CreateTicketForm"; // Import the form component
+import TicketDetails from "./pages/TicketDetails/TicketDetails";
+import CreateTicketForm from "./components/CreateTicketForm/CreateTicketForm"; // Import the form component
 import ticketData from "./assets/kanban.json";
 
 function App() {

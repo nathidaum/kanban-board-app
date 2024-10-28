@@ -1,4 +1,5 @@
 import { useParams, NavLink } from "react-router-dom";
+import "../TicketDetails/ticket-details.css"
 
 function TicketDetails({ tickets }) {
   const { ticketId } = useParams(); // Get ticketId from the URL

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import "../pages/pages.css";
+
 function NotFound() {
   return (
     <div id="not-found">

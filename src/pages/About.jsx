@@ -1,3 +1,5 @@
+import "../pages/pages.css";
+
 function About() {
     
     return (

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../CreateTicketForm/create-ticket-form.css";
 
 const CreateTicketForm = ({ callBacktoCreateTicket }) => {
   const [title, setTitle] = useState("");

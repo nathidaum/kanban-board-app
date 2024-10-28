@@ -1,0 +1,67 @@
+/**************** CARD *****************/
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    background-color: #131313;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    font-weight: 400;
+    padding-right: 15px;
+  }
+  
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .label.High, .label.Medium, .label.Low {
+    padding: 1px 15px;
+    width: fit-content;
+    font-weight: 500;
+    border-radius: 20px;
+  }
+  
+  .label.High {
+    background-color: #575b99;
+    color: #1c1e4a;
+  }
+  
+  .label.Medium {
+    background-color: rgb(98, 68, 128);
+    color: rgb(55, 28, 19);
+  }
+  
+  .label.Low {
+    background-color: rgba(43, 103, 188, 0.823);
+    color: black;
+  }
+  
+  .card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .card-buttons button {
+    margin: 10px 2px;
+  }
+  
+  .card .delete-button {
+    border-radius: 10px;
+    padding: 0.8em 1.5em;
+    background-color: transparent;
+    cursor: pointer;
+    color: grey;
+    font-size: 1em;
+  }
+  
+  .card .delete-button:hover {
+    background-color: #191919;
+    color: white;
+    border: 1px solid white;
+  }

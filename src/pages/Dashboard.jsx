@@ -1,4 +1,5 @@
-import Column from "../components/Column";
+import Column from "../components/Column/Column";
+import "../pages/pages.css";
 
 function Dashboard({ tickets, deleteTicket }) {
   const todoTickets = tickets.filter((ticket) => ticket.status === "To Do");

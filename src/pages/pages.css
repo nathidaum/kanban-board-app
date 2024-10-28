@@ -1,0 +1,17 @@
+/************************************************/
+/* Component/Page-Specific Styles */
+
+#app, #about, #not-found {
+    margin: 80px 0px 40px 200px;
+    height: calc(100vh - 60px);
+  }
+  
+  .intro, .error {
+    font-size: 1.4rem;
+    padding: 20px 500px 20px 0px;
+  }
+  
+  .intro p, .grey {
+    font-size: 1.3rem;
+    color: grey;
+  }

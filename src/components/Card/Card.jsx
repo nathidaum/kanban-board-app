@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./card.css"
 
 const Card = ({ ticket, deleteTicket }) => {
 

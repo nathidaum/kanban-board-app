@@ -1,0 +1,21 @@
+/****************** FOOTER ******************/
+#footer {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #131313;
+    z-index: 999;
+  }
+  
+  #footer a {
+    color: grey;
+  }

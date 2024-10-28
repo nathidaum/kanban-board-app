@@ -1,3 +1,5 @@
+import "../Navbar/navbar.css";
+
 const Navbar = ({ openForm }) => {
   return (
     <nav id="navbar">

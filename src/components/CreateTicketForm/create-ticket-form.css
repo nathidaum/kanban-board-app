@@ -1,0 +1,63 @@
+/******** CREATE TICKET FORM **********/
+
+.form {
+    margin: 20px 100px 20px;
+    padding: 50px;
+    background-color: #131313;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Form overlay to darken the background */
+  .form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(75, 75, 75, 0.8); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Close button styling */
+  .close-button {
+    position: absolute;
+    top: 110px;
+    right: 500px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .form h2 {
+    text-align: center; 
+  }
+  
+  .form .inputs {
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    margin: 0 20px;
+  }
+  
+  .form .inputs label {
+    margin: 10px; 
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .form input, .form select {
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    margin: 0.5rem; 
+    padding: 0.5rem 2rem;
+    border: 1px solid #ffffff;
+  }
