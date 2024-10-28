@@ -25,19 +25,19 @@
     color: var(--text-color);
     font-weight: 400;
     font-size: 1.1rem;
-    background-color: var(--accent-color);
+    background: var(--bg-color);
     width: fit-content;
     padding: 2px 20px; 
     border-radius: 40px;
   }
   
   .detailed-card .description {
-    color: grey;
+    color: var(--text-color)
   }
   
   .assigned {
-    color: grey;
-    font-weight: 400;
+    color: var(--text-color);
+    font-weight: 800;
   }
 
   .ticket-details .buttons {
@@ -53,6 +53,6 @@
     color: var(--text-color);
     font-weight: 500;
     font-size: 1rem;
-    background-color: var(--tertiary-color);
+    background-color: var(--accent-color);
   }
 

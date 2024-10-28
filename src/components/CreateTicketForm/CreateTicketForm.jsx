@@ -88,7 +88,7 @@ const CreateTicketForm = ({ callBacktoCreateTicket }) => {
 
         <label>
           Due Date:
-          <input className="placeholder"
+          <input
             type="date"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}

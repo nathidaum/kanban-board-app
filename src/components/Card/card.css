@@ -2,7 +2,7 @@
 
 .card {
   margin: 20px;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: var(--bar-color);
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -45,7 +45,7 @@
 .card-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .card-buttons button {
@@ -63,5 +63,4 @@
 
 .card .delete-button:hover {
   color: var(--text-color);
-  font-weight: 600;
 }
