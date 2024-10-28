@@ -13,7 +13,7 @@ const Card = ({ ticket, deleteTicket }) => {
       <section className="card-buttons">
       <button className="delete-button" onClick={() => {deleteTicket(ticket.id);}}>Delete</button>
       <NavLink to={`/ticket/${ticket.id}`}>
-        <button>See details</button>
+        <button className="outline-button">See details</button>
       </NavLink>
       </section>
     </div>

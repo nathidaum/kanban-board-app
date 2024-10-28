@@ -1,16 +1,15 @@
 /****************** NAV BAR ******************/
 
 #navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 200px;
-    margin: 0;
-    padding: 5px 30px;
-    height: 70px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #131313;
-    z-index: 999;
-  }
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  left: 230px;
+  padding: 5px 15px;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--bar-color);
+  border-radius: 15px;
+}

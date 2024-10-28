@@ -3,10 +3,11 @@
 /* Base theme variables */
 :root {
   --primary-color: #9b9ff3;
-  --secondary-color: #46444478;
-  --accent-color: #f0db4e;
-  --text-color: rgba(255, 255, 255, 0.87);
-  --bg-color: #242424;
+  --secondary-color: #1f2269;
+  --accent-color: #c4d3f3;
+  --text-color: #0f1033;
+  --bg-color: linear-gradient(135deg, #c4d3f3, #e2e8f7); /* Direct gradient application */;
+  --bar-color: #f3f9ff;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,7 +26,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
   color: var(--text-color);
 }
 
@@ -39,12 +40,8 @@ body {
 /* Text styles */
 a {
   font-weight: 500;
-  color: white;
+  color: var(---color);
   text-decoration: inherit;
-}
-
-a:hover {
-  color: var(--primary-color);
 }
 
 h1 {
@@ -65,7 +62,7 @@ hr {
 }
 
 /* Button styles */
-button, .secondary-button {
+button, .secondary-button, .outline-button {
   border-radius: 10px;
   padding: 0.8em 1.5em;
   font-size: 1em;
@@ -77,26 +74,45 @@ button, .secondary-button {
 
 button {
   background-color: var(--secondary-color);
-  color: var(--text-color);
+  color: var(--bar-color);
+  font-weight: 600;
 }
 
 button:hover {
-  background-color: var(--primary-color);
-  color: #1c1c1c;
+  background-color: var(--accent-color);
+  color: var(--text-color);
 }
 
 .secondary-button {
   background-color: var(--accent-color);
-  color: black;
-  font-weight: 800;
+  color: var(--text-color);
 }
 
 .secondary-button a {
-  color: black;
+  color: var(--text-color);
   font-size: inherit;
   font-weight: inherit;
 }
 
 .secondary-button:hover {
-  background-color: var(--primary-color);
+  background-color: var(--text-color);
+}
+
+
+.outline-button {
+  border: 1px solid var(--accent-color);
+  color: var(--text-color);
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.outline-button a {
+  color: var(--text-color);
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.outline-button:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
 }

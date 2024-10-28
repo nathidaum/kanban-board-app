@@ -8,7 +8,7 @@
   .detailed-card {
     margin-bottom: 30px;
     padding: 30px 50px;
-    background-color: #131313;
+    background-color: var(--bar-color);
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -22,10 +22,10 @@
   }
   
   .detailed-card .date {
-    color: grey;
+    color: var(--text-color);
     font-weight: 400;
     font-size: 1.1rem;
-    background-color: #191919;
+    background-color: var(--accent-color);
     width: fit-content;
     padding: 2px 20px; 
     border-radius: 40px;
