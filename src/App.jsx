@@ -38,16 +38,12 @@ function App() {
   // Function to handle search input change
   const handleSearch = (e) => {
     setQuery(e.target.value);
-    console.log("Updated query:", e.target.value); // Debugging
   };
 
   const filteredTickets = useMemo(() => {
-    // Log query and filtered results for debugging
-    console.log("Filtering tickets with query:", query);
     const filtered = tickets.filter((ticket) =>
       ticket.title.toLowerCase().includes(query.toLowerCase())
     );
-    console.log("Filtered tickets:", filtered);
     return filtered;
   }, [tickets, query]);
 
@@ -72,7 +68,7 @@ function App() {
         <Route
           path="/ticket/:ticketId"
           element={
-            <TicketDetails tickets={tickets} updateStatus={updateStatus} />
+            <TicketDetails tickets={tickets} callbackToUpdateStatus={updateStatus} />
           }
         />
       </Routes>
