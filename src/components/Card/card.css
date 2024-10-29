@@ -1,7 +1,7 @@
 /**************** CARD *****************/
 
 .card {
-  margin: 20px;
+  margin: 10px 20px;
   padding: 10px 20px;
   background-color: var(--bar-color);
   border-radius: 15px;
