@@ -3,8 +3,23 @@ import "./card.css"
 
 const Card = ({ ticket, deleteTicket }) => {
 
+  const onDragStart = (event, id) => {
+    console.log("Dragstart" + id)
+    event.dataTransfer.setData("id", id) // set the card’s id in the data transfer so it can be accessed on drop
+    event.currentTarget.classList.add("dragging")
+  }
+
+  const onDragEnd = (event) => {
+    event.currentTarget.classList.remove("dragging")
+  }
+
   return (
-    <div className="card">
+    <div
+      className="card"
+      draggable // make the card draggable
+      onDragStart={(e) => onDragStart(e, ticket.id)}
+      onDragEnd={onDragEnd}
+    >
       <div className="card-top">
       <h3>{ticket.title}</h3>
       <p className={`label ${ticket.priority}`}>{ticket.priority}</p>

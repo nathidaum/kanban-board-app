@@ -60,6 +60,7 @@ function App() {
               tickets={filteredTickets}
               createTicket={createTicket}
               deleteTicket={deleteTicket}
+              updateStatus={updateStatus}
             />
           }
         />

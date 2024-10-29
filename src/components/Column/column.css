@@ -17,6 +17,11 @@
   height: 80vh;
 }
 
+.kanban-column.hovered {
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
 /* Column title styling */
 .kanban-column h2 {
   position: sticky;
@@ -25,3 +30,4 @@
   font-size: 1.8rem;
   z-index: -1;
 }
+
