@@ -42,7 +42,7 @@
 }
 
 .sidebar-section li:hover {
-  background-color: var(--accent-color); /* hover background color */
+  background: var(--tertiary-color); /* hover background color */
 }
 
 .sidebar-section li a {
