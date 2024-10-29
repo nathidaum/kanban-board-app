@@ -4,8 +4,8 @@
 :root {
   --primary-color: #9b9ff3;
   --secondary-color: #1f2269;
-  --tertiary-color: rgb(255, 215, 198);
-  --accent-color: #c4d3f3;
+  --tertiary-color: #c4d3f3;
+  --accent-color: rgb(255, 215, 198);
   --text-color: #0f1033;
   --bg-color: linear-gradient(135deg, #c4d3f3, #e2e8f7); /* Direct gradient application */;
   --bar-color: #f3f9ff;
@@ -58,7 +58,7 @@ h3 {
 hr {
   border: none;
   height: 2px;                
-  background-color: var(--secondary-color); 
+  background-color: var(--text-color); 
   margin: 20px;
 }
 
@@ -78,23 +78,23 @@ button {
 }
 
 button:hover {
-  background-color: var(--tertiary-color);
+  background-color: var(--accent-color);
   border: 1px solid var(--text-color);
   color: var(--text-color);
 }
 
 .secondary-button {
   background-color: var(--text-color);
-  color: var(--accent-color);
+  color: var(--tertiary-color);
 }
 
 .secondary-button a {
-  color: var(--accent-color);
+  color: var(--tertiary-color);
   border: 1px solid var(--text-color); 
 }
 
 .secondary-button a:hover {
-  color: var(--accent-color);
+  color: var(--tertiary-color);
   font-size: inherit;
   font-weight: inherit;
 }
@@ -104,7 +104,7 @@ button:hover {
 }
 
 .outline-button {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--tertiary-color);
   color: var(--text-color);
   background-color: transparent;
   font-weight: 400;
@@ -117,6 +117,6 @@ button:hover {
 }
 
 .outline-button:hover {
-  background-color: var(--accent-color);
+  background-color: var(--tertiary-color);
   color: var(--text-color);
 }

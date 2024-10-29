@@ -28,6 +28,13 @@
   border: 1px solid var(--primary-color);
   background-color: var(--bar-color);
   flex-grow: 1;
+  color: var(--text-color);
+}
+
+/* color when typing */
+#navbar-search input:focus {
+  border: 3px solid var(--primary-color);
+  outline: none;
 }
 
 #navbar button {

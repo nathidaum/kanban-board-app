@@ -8,6 +8,11 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.card:hover {
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
 .card h3 {
   font-weight: 700;
   font-size: 1.2rem;
@@ -31,7 +36,7 @@
 }
 
 .label.High {
-  background-color: var(--tertiary-color);
+  background-color: var(--accent-color);
 }
 
 .label.Medium {

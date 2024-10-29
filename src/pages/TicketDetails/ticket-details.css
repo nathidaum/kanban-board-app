@@ -53,6 +53,6 @@
     color: var(--text-color);
     font-weight: 500;
     font-size: 1rem;
-    background-color: var(--accent-color);
+    background-color: var(--tertiary-color);
   }
 
