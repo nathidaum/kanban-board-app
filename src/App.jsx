@@ -61,6 +61,16 @@ function App() {
     closeEditForm();
   };
 
+
+   // Function to change the status of a ticket
+   const updateStatus = (ticketId, newStatus) => {
+    setTickets((prevTickets) =>
+      prevTickets.map((ticket) =>
+        ticket.id === ticketId ? { ...ticket, status: newStatus } : ticket
+      )
+    );
+  };
+
   // Function to delete a ticket
   const deleteTicket = (id) => {
     setTickets((prevTickets) =>
@@ -79,6 +89,9 @@ function App() {
     );
   }, [tickets, query]);
 
+
+
+
   return (
     <div id="app">
       <Routes>
@@ -89,6 +102,7 @@ function App() {
               tickets={filteredTickets}
               createTicket={createTicket}
               deleteTicket={deleteTicket}
+              updateStatus={updateStatus}
             />
           }
         />
