@@ -4,10 +4,9 @@ import "./card.css"
 const Card = ({ ticket, deleteTicket }) => {
 
   const onDragStart = (event, id) => {
-    console.log("Dragstart" + id)
-    event.dataTransfer.setData("id", id) // set the card’s id in the data transfer so it can be accessed on drop
-    event.currentTarget.classList.add("dragging")
-  }
+    event.dataTransfer.setData("id", id.toString()); // Ensure ID is string
+    event.currentTarget.classList.add("dragging");
+};
 
   const onDragEnd = (event) => {
     event.currentTarget.classList.remove("dragging")

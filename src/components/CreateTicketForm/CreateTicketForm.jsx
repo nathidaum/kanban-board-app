@@ -15,7 +15,6 @@ const CreateTicketForm = ({ callBacktoCreateTicket }) => {
     e.preventDefault();
 
     const newTicketObj = {
-      id: Date.now(),
       title,
       description,
       assignee,

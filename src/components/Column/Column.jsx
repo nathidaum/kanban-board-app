@@ -13,10 +13,10 @@ const Column = ({ title, tickets, status, deleteTicket, updateStatus }) => {
   };
 
   const onDrop = (event) => {
-    const id = event.dataTransfer.getData("id");
-    updateStatus(id, status); // Update the ticket status when dropped
-    event.currentTarget.classList.remove("hovered"); // Remove hovered class
-  };
+    const id = event.dataTransfer.getData("id"); // Retrieve ID as string
+    updateStatus(id, status); // Pass ID as string
+    event.currentTarget.classList.remove("hovered");
+};
 
   return (
     <div

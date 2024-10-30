@@ -17,6 +17,15 @@ function TicketDetails({ tickets, callbackToUpdateStatus, onEdit }) {
     return `${month} ${day}`;
   };
 
+  // available statuses
+  const statuses = ["To Do", "In Progress", "Done"];
+  const [selectedStatus, setSelectedStatus] = useState(ticket.status);
+  const handleStatusChange = (event) => {
+    const newStatus = event.target.value;
+    setSelectedStatus(newStatus);
+    callbackToUpdateStatus(ticket.id, newStatus); // Update status in app
+  };
+
   return (
     <div className="ticket-details">
       <div className="detailed-card">
@@ -33,6 +42,18 @@ function TicketDetails({ tickets, callbackToUpdateStatus, onEdit }) {
         </p>
         <p>{ticket.description}</p>
         <p className="assigned">{ticket.assignee}</p>
+
+        {/* dropdown menu to change state */}
+        <select
+          className="dropdown"
+          id="status"
+          value={selectedStatus}
+          onChange={handleStatusChange}
+        >
+          <option value="To Do">To Do</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Done">Done</option>
+        </select>
       </div>
 
       <div className="buttons">

@@ -33,11 +33,18 @@ function App() {
   };
   const closeEditForm = () => setIsEditFormOpen(false);
 
+  // Calculate the initial highest ID from the ticket data
+  const initialNextId =
+    Math.max(...ticketData.map((ticket) => parseInt(ticket.id, 10))) + 1;
+    const [nextId, setNextId] = useState(initialNextId);
+
   // Function to create a new ticket
   const createTicket = (newTicketObj) => {
-    setTickets((prevTickets) => [newTicketObj, ...prevTickets]);
+    const ticketWithId = { ...newTicketObj, id: nextId }; // Assign nextId as a string
+    setTickets((prevTickets) => [ticketWithId, ...prevTickets]);
+    setNextId((prevId) => prevId + 1); // Increment nextId for the next ticket
     closeForm();
-    
+
     // Trigger toast notification
     toast.success("🎉 New ticket created successfully!", {
       position: "bottom-right",
@@ -61,12 +68,13 @@ function App() {
     closeEditForm();
   };
 
-
-   // Function to change the status of a ticket
-   const updateStatus = (ticketId, newStatus) => {
+  // Function to change the status of a ticket
+  const updateStatus = (ticketId, newStatus) => {
     setTickets((prevTickets) =>
       prevTickets.map((ticket) =>
-        ticket.id === ticketId ? { ...ticket, status: newStatus } : ticket
+        ticket.id === ticketId.toString()
+          ? { ...ticket, status: newStatus }
+          : ticket
       )
     );
   };
@@ -88,9 +96,6 @@ function App() {
       ticket.title.toLowerCase().includes(query.toLowerCase())
     );
   }, [tickets, query]);
-
-
-
 
   return (
     <div id="app">
