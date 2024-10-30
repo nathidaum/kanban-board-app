@@ -1,5 +1,9 @@
 import { useMemo, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import React from "react";
+
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -9,14 +13,14 @@ import NotFound from "./pages/NotFoundPage";
 import Dashboard from "./pages/Dashboard";
 import TicketDetails from "./pages/TicketDetails/TicketDetails";
 import CreateTicketForm from "./components/CreateTicketForm/CreateTicketForm";
-import UpdateTicketForm from "./components/UpdateTicketForm/UpdateTicketForm"; // Import Update Form
+import UpdateTicketForm from "./components/UpdateTicketForm/UpdateTicketForm";
 import ticketData from "./assets/kanban.json";
 
 function App() {
   const [tickets, setTickets] = useState(ticketData);
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isEditFormOpen, setIsEditFormOpen] = useState(false); // New state for edit form
-  const [currentTicket, setCurrentTicket] = useState(null); // Store ticket being edited
+  const [isEditFormOpen, setIsEditFormOpen] = useState(false);
+  const [currentTicket, setCurrentTicket] = useState(null);
   const [query, setQuery] = useState("");
 
   // Open forms
@@ -24,7 +28,7 @@ function App() {
   const closeForm = () => setIsFormOpen(false);
 
   const openEditForm = (ticket) => {
-    setCurrentTicket(ticket); // Set ticket to be edited
+    setCurrentTicket(ticket);
     setIsEditFormOpen(true);
   };
   const closeEditForm = () => setIsEditFormOpen(false);
@@ -33,6 +37,18 @@ function App() {
   const createTicket = (newTicketObj) => {
     setTickets((prevTickets) => [newTicketObj, ...prevTickets]);
     closeForm();
+    
+    // Trigger toast notification
+    toast.success("🎉 New ticket created successfully!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   // Function to edit / update a ticket
@@ -83,8 +99,8 @@ function App() {
           element={
             <TicketDetails
               tickets={tickets}
-              callbackToUpdateStatus={updateTicket} // Pass update callback
-              onEdit={openEditForm} // Pass edit handler
+              callbackToUpdateStatus={updateTicket}
+              onEdit={openEditForm}
             />
           }
         />
@@ -121,6 +137,21 @@ function App() {
           </div>
         </div>
       )}
+
+      {/* ToastContainer renders toast notifications */}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </div>
   );
 }

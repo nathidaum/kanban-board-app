@@ -19,6 +19,18 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+
+    /* Toastify styles */
+    --toastify-color-light: var(--bar-color);
+    --toastify-color-success: var(--tertiary-color);
+    --toastify-icon-color-success: var(--primary-color);
+    --toastify-toast-width: 350px;
+    --toastify-toast-background: var(--bar-color);
+    --toastify-toast-min-height: 60px; 
+    --toastify-font-family: "Inter", sans-serif;
+    --toastify-text-color-light: var(--text-color);
 }
 
 body {
