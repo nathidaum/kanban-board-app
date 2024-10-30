@@ -48,6 +48,7 @@ const CreateTicketForm = ({ callBacktoCreateTicket }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
+            maxLength="70" // character limit
           />
         </label>
 
@@ -62,6 +63,7 @@ const CreateTicketForm = ({ callBacktoCreateTicket }) => {
             required
             rows="5" // Controls the height of the textarea
             cols="40" // Controls the width of the textarea
+            maxLength="350"
           />
         </label>
 

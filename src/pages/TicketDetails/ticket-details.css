@@ -1,58 +1,72 @@
-
 /****************** TICKET DETAILS ******************/
 
 .ticket-details {
-    margin: 100px 200px;
-  }
-  
-  .detailed-card {
-    margin-bottom: 30px;
-    padding: 30px 50px;
-    background-color: var(--bar-color);
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .detailed-card h3 {
-    font-size: 2rem;
-  }
-  
-  .detailed-card p {
-    font-size: 1.4rem;
-  }
-  
-  .detailed-card .date {
-    color: var(--text-color);
-    font-weight: 400;
-    font-size: 1.1rem;
-    background: var(--bg-color);
-    width: fit-content;
-    padding: 2px 20px; 
-    border-radius: 40px;
-  }
-  
-  .detailed-card .description {
-    color: var(--text-color)
-  }
-  
-  .assigned {
-    color: var(--text-color);
-    font-weight: 800;
-  }
+  margin: 100px 200px;
+}
 
-  .ticket-details .buttons {
-    display: flex; 
-    justify-content: space-between;
-  }
-  
-  .dropdown {
-    padding: 10px 20px;
-    width: fit-content;
-    border-radius: 50px;
-    border: none;
-    color: var(--text-color);
-    font-weight: 500;
-    font-size: 1rem;
-    background-color: var(--tertiary-color);
-  }
+.detailed-card {
+  margin-bottom: 30px;
+  padding: 30px 50px;
+  background-color: var(--bar-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.detailed-card h3 {
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+
+.detailed-card p {
+  font-size: 1.4rem;
+}
+
+.detailed-card .date { 
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 0.9rem;
+  background: var(--tertiary-color);
+  width: fit-content;
+  padding: 2px 20px;
+  border-radius: 40px;
+  white-space: nowrap; 
+  flex-shrink: 0;
+}
+
+.detailed-card .description {
+  color: var(--text-color);
+}
+
+.assigned {
+  color: var(--text-color);
+  font-weight: 800;
+}
+
+.ticket-details .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown {
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  width: fit-content;
+  border-radius: 50px;
+  border: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+}
+
+.detailed-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}

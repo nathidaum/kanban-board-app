@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import "../TicketDetails/ticket-details.css";
 
@@ -31,31 +31,36 @@ function TicketDetails({ tickets, callbackToUpdateStatus }) {
   return (
     <div className="ticket-details">
       <div className="detailed-card">
-        <p className="date">
-          Created {formatDate(ticket.createdDate)} - Due{" "}
-          {formatDate(ticket.dueDate)}
-        </p>
-        <div className="card-top">
-          <h3>{ticket.title}</h3>
-          <p className={`label ${ticket.priority}`}>{ticket.priority}</p>
+        <div className="detailed-card-top">
+          <div className="title">
+            <h3>{ticket.title}</h3>
+            <p className={`label ${ticket.priority}`}>{ticket.priority}</p>
+          </div>
+          <p className="date">
+            Created {formatDate(ticket.createdDate)} - Due{" "}
+            {formatDate(ticket.dueDate)}
+          </p>
         </div>
         <p>{ticket.description}</p>
         <p className="assigned">{ticket.assignee}</p>
 
         {/* dropdown menu to change state */}
-        <select className="dropdown" id="status" value={selectedStatus} onChange={handleStatusChange}>
+        <select
+          className="dropdown"
+          id="status"
+          value={selectedStatus}
+          onChange={handleStatusChange}
+        >
           <option value="To Do">To Do</option>
           <option value="In Progress">In Progress</option>
           <option value="Done">Done</option>
         </select>
-
       </div>
 
       <div className="buttons">
         <NavLink to="/" className="back-button">
           <button>Back</button>
         </NavLink>
-
       </div>
     </div>
   );
