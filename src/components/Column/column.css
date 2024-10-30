@@ -14,7 +14,8 @@
   margin-top: 60px;
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 72vh;
+  overflow: hidden; /* Prevent the column itself from overflowing */
 }
 
 .kanban-column.hovered {
@@ -31,3 +32,29 @@
   z-index: -1;
 }
 
+
+/******** SCROLL ********/
+
+.ticket-container {
+  overflow-y: auto;
+  padding-bottom: 20px; /* space below the last card */
+}
+
+.ticket-container::-webkit-scrollbar {
+  width: 15px; /* scrollbar width */
+}
+
+.ticket-container::-webkit-scrollbar-track {
+  background: var(--tertiary-color);
+  border-radius: 10px;
+}
+
+.ticket-container::-webkit-scrollbar-thumb {
+  background-color: var(--bar-color);
+  border-radius: 10px;
+  border: 3px solid var(--tertiary-color);
+}
+
+.ticket-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-color);/
+}
