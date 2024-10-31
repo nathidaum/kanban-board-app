@@ -72,7 +72,7 @@ function App() {
   const updateStatus = (ticketId, newStatus) => {
     setTickets((prevTickets) =>
       prevTickets.map((ticket) =>
-        ticket.id === ticketId.toString()
+        ticket.id.toString() === ticketId.toString()
           ? { ...ticket, status: newStatus }
           : ticket
       )
@@ -118,7 +118,7 @@ function App() {
           element={
             <TicketDetails
               tickets={tickets}
-              callbackToUpdateStatus={updateTicket}
+              callbackToUpdateStatus={updateStatus}
               onEdit={openEditForm}
             />
           }

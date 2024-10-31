@@ -20,10 +20,12 @@ function TicketDetails({ tickets, callbackToUpdateStatus, onEdit }) {
   // available statuses
   const statuses = ["To Do", "In Progress", "Done"];
   const [selectedStatus, setSelectedStatus] = useState(ticket.status);
+  
   const handleStatusChange = (event) => {
+    console.log(`Updating status for ticket id ${ticket.id} to ${event.target.value}`)
     const newStatus = event.target.value;
     setSelectedStatus(newStatus);
-    callbackToUpdateStatus(ticket.id, newStatus); // Update status in app
+    callbackToUpdateStatus(ticket.id.toString(), newStatus); // Update status in app
   };
 
   return (

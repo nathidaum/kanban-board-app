@@ -28,7 +28,7 @@ const Column = ({ title, tickets, status, deleteTicket, updateStatus }) => {
       <h2>{title}</h2>
       <div className="ticket-container">
         {tickets.map((ticket) => (
-          <Card key={ticket.id} ticket={ticket} deleteTicket={deleteTicket} />
+          <Card key={ticket.id} ticket={ticket} deleteTicket={deleteTicket}/>
         ))}
       </div>
     </div>
