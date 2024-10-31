@@ -1,17 +1,18 @@
 #app,
 #about,
 #not-found {
-  margin: 100px 0px 100px 200px;
+  margin: 80px 0px 100px 200px;
 }
 
 .intro,
 .error {
-  font-size: 1.4rem;
+  font-size: 1rem;
   padding: 20px 500px 20px 0px;
 }
 
 .intro p,
 .grey {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--text-color);
+  padding-bottom: 30px;
 }

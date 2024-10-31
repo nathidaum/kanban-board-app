@@ -14,7 +14,7 @@
   margin-top: 60px;
   display: flex;
   flex-direction: column;
-  height: 72vh;
+  height: 75vh;
   overflow: hidden; /* Prevent the column itself from overflowing */
 }
 
