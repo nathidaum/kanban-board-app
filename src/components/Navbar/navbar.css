@@ -40,3 +40,24 @@
 #navbar button {
   white-space: nowrap;
 }
+
+
+@media (max-width: 768px) {
+  #navbar {
+    margin: 10px 20px;
+    padding: 10px;
+    height: fit-content;
+    left: 0;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  #navbar-search {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+  }}

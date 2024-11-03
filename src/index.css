@@ -1,13 +1,17 @@
 /* Global Styles */
 
 /* Base theme variables */
-:root { 
+:root {
   --primary-color: #9b9ff3;
   --secondary-color: #1f2269;
   --tertiary-color: #c4d3f3;
   --accent-color: #ffd7c6;
   --text-color: #0f1033;
-  --bg-color: linear-gradient(135deg, #c4d3f3, #e2e8f7); /* Direct gradient application */;
+  --bg-color: linear-gradient(
+    135deg,
+    #c4d3f3,
+    #e2e8f7
+  ); /* Direct gradient application */
   --bar-color: #f3f9ff;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -20,17 +24,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-
-
-    /* Toastify styles */
-    --toastify-color-light: var(--bar-color);
-    --toastify-color-success: var(--tertiary-color);
-    --toastify-icon-color-success: var(--primary-color);
-    --toastify-toast-width: 350px;
-    --toastify-toast-background: var(--bar-color);
-    --toastify-toast-min-height: 60px; 
-    --toastify-font-family: "Inter", sans-serif;
-    --toastify-text-color-light: var(--text-color);
+  /* Toastify styles */
+  --toastify-color-light: var(--bar-color);
+  --toastify-color-success: var(--tertiary-color);
+  --toastify-icon-color-success: var(--primary-color);
+  --toastify-toast-width: 350px;
+  --toastify-toast-background: var(--bar-color);
+  --toastify-toast-min-height: 60px;
+  --toastify-font-family: "Inter", sans-serif;
+  --toastify-text-color-light: var(--text-color);
 }
 
 body {
@@ -70,13 +72,15 @@ h3 {
 
 hr {
   border: none;
-  height: 2px;                
-  background-color: var(--text-color); 
+  height: 2px;
+  background-color: var(--text-color);
   margin: 20px;
 }
 
 /* Button styles */
-button, .secondary-button, .outline-button {
+button,
+.secondary-button,
+.outline-button {
   border-radius: 10px;
   padding: 0.8em 1.5em;
   font-size: 1em;
@@ -102,7 +106,7 @@ button:hover {
 
 .secondary-button a {
   color: var(--tertiary-color);
-  border: 1px solid var(--text-color); 
+  border: 1px solid var(--text-color);
 }
 
 .secondary-button a:hover {

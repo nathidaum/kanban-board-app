@@ -29,7 +29,7 @@
 .sidebar-section ul {
   padding: 0;
   margin: 0;
-  width: 100%; /* links expand across sidebar */
+  width: 100%;
 }
 
 .sidebar-section li {
@@ -42,20 +42,25 @@
 }
 
 .sidebar-section li:hover {
-  background: var(--tertiary-color); /* hover background color */
+  background: var(--tertiary-color);
 }
 
 .sidebar-section li a {
-  display: flex; /* Use flexbox to align icon and text */
+  display: flex;
   align-items: center;
   padding: 10px 10px;
 }
 
 .sidebar-section li a i {
   margin: 0 15px 0 30px;
-  color: var(--text-color); /* Set icon color */
+  color: var(--text-color);
 }
 
 .sidebar-section li a:hover i {
-  color: var(--text-color); /* Optional: change icon color on hover */
+  color: var(--text-color);
 }
+
+@media (max-width: 768px) {
+  #sidebar {
+    display: none;
+  }}
