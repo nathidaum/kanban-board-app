@@ -25,4 +25,23 @@
   #not-found {
     margin: 70px 0px 0px 0px;
   }
+
+  .intro,
+  .error {
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  .intro h1,
+  .error h1{
+    font-size: 2rem;
+  }
+
+  .intro p,
+  .grey {
+    font-size: 1rem;
+    color: var(--text-color);
+    padding-bottom: 30px;
+  }
+
 }
