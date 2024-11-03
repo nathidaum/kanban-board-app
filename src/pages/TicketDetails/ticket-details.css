@@ -70,3 +70,61 @@
   align-items: center;
   margin-right: 2rem;
 }
+
+.mobile-edit {
+  display: none;
+}
+
+.desktop-edit {
+  display: block;
+}
+
+@media (max-width: 1300px) {
+  .ticket-details {
+    margin: 10px 20px;
+  }
+  
+  .detailed-card {
+    margin-bottom: 30px;
+    padding: 20px 30px;
+  }
+  
+  .detailed-card h3 {
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .detailed-card p {
+    font-size: 1.1rem;
+  }
+  
+  .detailed-card .date { 
+    font-size: 0.9rem;
+  }
+  
+  .ticket-details .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .dropdown {
+    font-size: 0.9rem;
+  }
+  
+  .detailed-card-top {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .title {
+    justify-content: space-between;
+}
+
+.mobile-edit {
+  display: block;
+}
+.desktop-edit {
+  display: none;
+}
+
+}

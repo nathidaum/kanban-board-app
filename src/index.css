@@ -92,6 +92,7 @@ button,
 button {
   background-color: var(--text-color);
   font-weight: 400;
+  color: var(--bar-color);
 }
 
 button:hover {

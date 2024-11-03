@@ -36,7 +36,7 @@ function TicketDetails({ tickets, callbackToUpdateStatus, onEdit }) {
             <h3>{ticket.title}</h3>
             <p className={`label ${ticket.priority}`}>{ticket.priority}</p>
           </div>
-          <button onClick={() => onEdit(ticket)}>Edit</button>
+          <button className="desktop-edit" onClick={() => onEdit(ticket)}>Edit</button>
         </div>
         <p className="date">
           Created {formatDate(ticket.createdDate)} - Due{" "}
@@ -62,6 +62,7 @@ function TicketDetails({ tickets, callbackToUpdateStatus, onEdit }) {
         <NavLink to="/" className="back-button">
           <button>Back</button>
         </NavLink>
+        <button className= "mobile-edit" onClick={() => onEdit(ticket)}>Edit</button>
       </div>
     </div>
   );

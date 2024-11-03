@@ -19,7 +19,14 @@
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   #footer {
-    display: none;
+    padding: 5px 15px;
+    left: 20px;
+    right: 20px;
   }}
+
+  /* @media (max-width: 768px) {
+    #footer {
+      display: none;
+    }} */
